@@ -1,0 +1,128 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(22, 22, 91);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+#game {
+    width: 550px;
+    height: 550px;
+    box-shadow: 0 0 20px black;
+    margin-top: -50px;
+}
+h1{
+    font-size: 80px;
+    text-shadow: 0 0 20px black;
+    margin-top: -50px;
+}
+.restDiv {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50% ,-50%);
+   display: none;
+}
+.restDiv img{
+    width: 100px ;
+    height: 100px;
+    cursor: pointer;
+}
+.winDiv{
+    width: 50px;
+    height: 10px;
+    background-color: rgb(22, 22, 91);
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    animation: display 1s forwards;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes display{
+    100%{
+        opacity: 1;
+        width: 800px;
+        height: 500px;
+        font-size: 100px;
+    }
+}
+.block {
+    width: 183px;
+    height: 183px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid white;
+    box-sizing: border-box;
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (max-width:850px){
+    .winDiv{
+        font-size: 10px;
+        
+    }
+    @keyframes display{
+        100%{
+            opacity: 1;
+            width: 400px;
+            height: 300px;
+            font-size: 50px;
+        }
+    }
+    .restDiv{
+        top: 58%;
+    }
+}
+
+@media (max-width:574px){
+    .block{
+        width: 106px;
+        height: 106px;
+    }
+    #game{
+        width: 320px;
+        height: 320px;
+        margin-top: 0;
+    }
+    h1{
+        font-size: 50px;
+    }
+    .restDiv{
+        top: 62%;
+    }
+    .restDiv img{
+        width: 50px;
+        height: 50px;
+        
+    }
+    .winDiv{
+        width: 50px;
+        height: 10px;
+        animation: display2 2s forwards;
+    }
+    @keyframes display2{
+       
+        100%{
+            opacity: 1;
+            width: 320px;
+            height: 200px;
+            font-size: 40px;
+        }
+    }
+}
